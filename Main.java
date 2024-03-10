@@ -1,3 +1,4 @@
+/*
 import javax.jws.soap.SOAPBinding;
 import javax.swing.JOptionPane;
 
@@ -61,7 +62,6 @@ public class Main{
     }
 }
 
-/*
 import java.util.Scanner;
 public class Main{
         static double add(double Number_1, double Number_2){
@@ -97,4 +97,97 @@ public class Main{
                 if (Number_2 == 0) {
                     System.out.println(0.0);}
                 else {
-                    System.out.println(divide(Number_1,Number_2));}}}}}*/
+                    System.out.println(divide(Number_1,Number_2));}}}}}
+
+
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int Strength = 10;
+        int Agility = 10;
+        int Dexterity = 10;
+        int Health = 100;
+        int Remaining_Points = 10000;
+
+        String Stats_Menu = JOptionPane.showInputDialog("These are your stats:\n1. " + Strength + "\n2. " + Agility + "\n3. " + Dexterity + "\n4. " + Health + "\n5. " + Remaining_Points + "\n\nWould you like to upgrade any?\n(if not type 9)\n(Please enter its corresponding number apart from Remaining Points)\n");
+        while (true) {
+            if (Stats_Menu.equals("9") || Remaining_Points == 0) {
+                break;
+            }
+            String Upgrade = JOptionPane.showInputDialog("Enter the amount you would like to add into the stat\n");
+            if (Integer.parseInt(Upgrade) > Remaining_Points) {
+                JOptionPane.showMessageDialog(null, "Goodbye :)");
+                break;
+            }
+            if (Integer.parseInt(Upgrade) <= 0) {
+                JOptionPane.showMessageDialog(null, "Goodbye :)");
+                break;
+            }
+            else {
+                if (Stats_Menu.equals("1")) {
+                    if (Integer.parseInt(Upgrade) > Remaining_Points) {
+                        JOptionPane.showMessageDialog(null, "You entered an invalid amount please try again.\n");
+                    } else {
+                        Strength = Strength + Integer.parseInt(Upgrade);
+                        Remaining_Points = Remaining_Points - Integer.parseInt(Upgrade);
+                        int Stats_Update = JOptionPane.showConfirmDialog(null, "You have updated your stats would you like to see your new stats?");
+                        if (Stats_Update == 0) {
+                            JOptionPane.showMessageDialog(null, "These are your stats:\n1. " + Strength + "\n2. " + Agility + "\n3. " + Dexterity + "\n4. " + Health + "\n5. " + Remaining_Points);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Goodbye :)");
+                        }
+                    }
+                }
+                if (Stats_Menu.equals("2")) {
+                    if (Integer.parseInt(Upgrade) > Remaining_Points) {
+                        JOptionPane.showMessageDialog(null, "You entered an invalid amount please try again.\n");
+                    } else {
+                        Agility = Agility + Integer.parseInt(Upgrade);
+                        Remaining_Points = Remaining_Points - Integer.parseInt(Upgrade);
+                        int Stats_Update = JOptionPane.showConfirmDialog(null, "You have updated your stats would you like to see your new stats?");
+                        if (Stats_Update == 0) {
+                            JOptionPane.showMessageDialog(null, "These are your stats:\n1. " + Strength + "\n2. " + Agility + "\n3. " + Dexterity + "\n4. " + Health + "\n5. " + Remaining_Points);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Goodbye :)");
+                        }
+                    }
+                }
+                if (Stats_Menu.equals("3")) {
+                    if (Integer.parseInt(Upgrade) > Remaining_Points) {
+                        JOptionPane.showMessageDialog(null, "You entered an invalid amount please try again.\n");
+                    } else {
+                        Dexterity = Dexterity + Integer.parseInt(Upgrade);
+                        Remaining_Points = Remaining_Points - Integer.parseInt(Upgrade);
+                        int Stats_Update = JOptionPane.showConfirmDialog(null, "You have updated your stats would you like to see your new stats?");
+                        if (Stats_Update == 0) {
+                            JOptionPane.showMessageDialog(null, "These are your stats:\n1. " + Strength + "\n2. " + Agility + "\n3. " + Dexterity + "\n4. " + Health + "\n5. " + Remaining_Points);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Goodbye :)");
+                        }
+                    }
+                }
+                if (Stats_Menu.equals("4")) {
+                    if (Integer.parseInt(Upgrade) > Remaining_Points) {
+                        JOptionPane.showMessageDialog(null, "You entered an invalid amount please try again.\n");
+                    } else {
+                        Health = Health + Integer.parseInt(Upgrade);
+                        Remaining_Points = Remaining_Points - Integer.parseInt(Upgrade);
+                        int Stats_Update = JOptionPane.showConfirmDialog(null, "You have updated your stats would you like to see your new stats?");
+                        if (Stats_Update == 0) {
+                            JOptionPane.showMessageDialog(null, "These are your stats:\n1. " + Strength + "\n2. " + Agility + "\n3. " + Dexterity + "\n4. " + Health + "\n5. " + Remaining_Points);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Goodbye :)");
+                        }
+                    }
+                }
+                if (Stats_Menu.equals("5")) {
+                    JOptionPane.showMessageDialog(null, "Goodbye :)");
+                }
+            }
+        }
+    }
+}*/
